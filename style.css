@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem;
+  margin: 5rem auto auto;
   padding: 2rem;
   text-align: center;
 }
@@ -24,20 +24,11 @@ main {
   width: 30rem;
 }
 
-@media screen and (max-width:780px) {
-  main {
-    width: 25rem;
-  }
-}
-
-.pattern-divider img {
-  margin: 2rem;
-}
-
 .advice-id {
   color: hsl(150, 100%, 66%);
-  font-size: 20px;
+  font-size: 15px;
   letter-spacing: 5px;
+  margin: 2rem;
 }
 
 .advice-txt {
@@ -45,12 +36,22 @@ main {
   font-size: 28px
 }
 
+/* pattern divider */
+.pattern-divider-desktop {
+  margin: 2rem 1rem;
+}
+
+.pattern-divider-mobile {
+  display: none;
+}
+
+/* dice icon btn */
 button {
   background-color: hsl(150, 100%, 66%);
   border-radius: 50%;
   border: none;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -58,6 +59,12 @@ button {
   cursor: pointer;
 }
 
+/* dice icon btn hover effects */
+button:hover {
+  box-shadow: 0 0 45px hsl(150, 100%, 66%);
+}
+
+/* credit section */
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -66,4 +73,37 @@ button {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* media query */
+@media screen and (min-width:500px) and (max-width:780px) {
+  main {
+    width: 25rem;
+  }
+
+  .pattern-divider-mobile {
+    display: block;
+    margin: 3rem;
+  }
+
+  .pattern-divider-desktop {
+    display: none;
+  }
+}
+
+@media screen and (max-width:500px) {
+  main {
+    width: 20rem;
+    padding: 0 1rem 3rem;
+  }
+
+  .pattern-divider-mobile {
+    display: block;
+    margin: auto;
+    padding: 3rem 0;
+  }
+
+  .pattern-divider-desktop {
+    display: none;
+  }
 }
